@@ -1,0 +1,20 @@
+0 verbose cli D:\Program Files\nodejs\node.exe D:\工作资料\code\sysSpaider\gakuran-site\.corepack\v1\npm\12.0.2\bin\npm-cli.js
+1 info using npm@12.0.2
+2 info using node@v24.19.0
+3 silly config load:file:D:\工作资料\code\sysSpaider\gakuran-site\.corepack\v1\npm\12.0.2\npmrc
+4 silly config load:file:D:\工作资料\code\sysSpaider\gakuran-site\.npmrc
+5 silly config load:file:C:\Users\Administrator\.npmrc
+6 silly config load:file:D:\Program Files\nodejs\etc\npmrc
+7 verbose title npm exec vinext build
+8 verbose argv "exec" "vinext" "build"
+9 verbose logfile logs-max:10 dir:D:\工作资料\code\sysSpaider\gakuran-site\.npm-cache\_logs\2026-08-21T08_27_36_396Z-
+10 verbose logfile D:\工作资料\code\sysSpaider\gakuran-site\.npm-cache\_logs\2026-08-21T08_27_36_396Z-debug-0.log
+11 silly logfile done cleaning log files
+12 notice run site-creator-vinext-starter@0.1.0 npx
+13 notice run vinext build
+14 verbose cwd D:\工作资料\code\sysSpaider\gakuran-site
+15 verbose os Windows_NT 10.0.19044
+16 verbose node v24.19.0
+17 verbose npm  v12.0.2
+18 verbose exit 0
+19 info ok
