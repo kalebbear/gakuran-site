@@ -1,36 +1,52 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Footer, Header } from "./components";
 
 export const metadata: Metadata = {
-  title: "Gakuran Wiki & Beginner Guides | Gakuran Archive",
-  description: "Independent Gakuran wiki with beginner guides for fighting styles, controls, character creation, faces, ethnicity, hair and more.",
+  title: "Gakuran Roblox Wiki, Controls & Fighting Styles",
+  description: "A practical Gakuran Roblox wiki with beginner routes, controls, fighting styles, character guides and carefully checked community resources.",
 };
 
 const guides = [
-  { href: "/fighting-styles", tag: "COMBAT", title: "Fighting Styles", text: "Understand style roles, rerolls, and what to verify before choosing." },
-  { href: "/controls", tag: "START HERE", title: "Controls & Keybinds", text: "Learn movement, combat stance, blocking, dodging, and core inputs." },
-  { href: "/character", tag: "CHARACTER", title: "Character Guide", text: "Navigate faces, ethnicity, hair, surnames, and customization topics." },
+  { href: "/controls", icon: "⌨", tag: "BEGINNER", title: "Controls Guide", text: "All core PC keybinds, combat stance, blocking and movement in one place." },
+  { href: "/fighting-styles", icon: "拳", tag: "COMBAT", title: "Fighting Styles", text: "Compare play styles and learn what to check before using a reroll." },
+  { href: "/character", icon: "人", tag: "CUSTOMIZE", title: "Character Guide", text: "Faces, ethnicity, hairstyles, hair colors, surnames and accessories." },
+  { href: "/trello", icon: "↗", tag: "RESOURCES", title: "Trello & Links", text: "Open the public board and verify links against the correct Roblox experience." },
 ];
 
 export default function Home() {
-  return <main>
-    <header className="site-header">
-      <Link className="brand" href="/"><span>学乱</span> GAKURAN ARCHIVE</Link>
-      <nav aria-label="Main navigation"><Link href="/guides">Guides</Link><Link href="/fighting-styles">Styles</Link><Link href="/character">Character</Link><Link href="/controls">Controls</Link></nav>
-    </header>
-    <section className="hero">
-      <div className="eyebrow">COMMUNITY FIELD GUIDE · UPDATED AUG 2026</div>
-      <h1>The Gakuran Wiki<br />Built for Players.</h1>
-      <p className="hero-copy">A focused, source-aware guide to Gakuran&apos;s combat, controls, and character systems—without invented codes or unverified stats.</p>
-      <div className="hero-actions"><Link className="button primary" href="/guides">Browse all guides</Link><a className="button ghost" href="https://www.roblox.com/games/128736949265057/Gakuran" target="_blank" rel="noreferrer">Open on Roblox ↗</a></div>
-      <div className="stamp" aria-hidden="true">学<br /><small>2007</small></div>
+  return <div className="game-home"><Header/><main>
+    <section className="game-hero">
+      <div className="hero-panel">
+        <div className="game-badges"><span>ROBLOX</span><span>FIGHTING</span><span>ROLEPLAY</span></div>
+        <p className="game-update">GAKURAN COMMUNITY WIKI · AUGUST 2026</p>
+        <h1>Master school life.<br/><em>Survive the fight.</em></h1>
+        <p className="game-intro">Your fast, practical field guide to Gakuran—learn the controls, understand fighting styles, and build your character without digging through scattered posts.</p>
+        <div className="hero-actions">
+          <Link className="game-button play" href="/guides"><span>▶</span> START HERE</Link>
+          <a className="game-button secondary" href="https://www.roblox.com/games/128736949265057/Gakuran" target="_blank" rel="noreferrer">PLAY ON ROBLOX ↗</a>
+        </div>
+        <div className="hero-facts"><div><b>May 2007</b><span>Setting</span></div><div><b>Roblox</b><span>Platform</span></div><div><b>RP + PvP</b><span>Game type</span></div></div>
+      </div>
+      <div className="game-visual">
+        <div className="scene-art" aria-label="Stylized Japanese school combat scene"><div className="sun"></div><div className="school"><i></i><i></i><i></i><i></i><i></i><i></i></div><div className="fighter fighter-one"><i></i><b></b><span></span></div><div className="fighter fighter-two"><i></i><b></b><span></span></div><div className="scene-lines"></div></div>
+        <div className="visual-overlay"><span>学乱</span><div><b>GAKURAN</b><small>PLAYER FIELD GUIDE</small></div></div>
+        <div className="live-chip"><i></i> CHECK LIVE STATUS ON ROBLOX</div>
+      </div>
     </section>
-    <section className="quick-strip" aria-label="Quick links"><span>START HERE</span><Link href="/controls">Learn the controls →</Link><Link href="/fighting-styles">Compare fighting styles →</Link><Link href="/character">Build your character →</Link></section>
-    <section className="section-shell">
-      <div className="section-heading"><div><p className="kicker">ESSENTIAL FILES</p><h2>Choose your next guide</h2></div><Link href="/guides">View guide index →</Link></div>
-      <div className="card-grid">{guides.map((guide,index)=><Link className="guide-card" href={guide.href} key={guide.href}><div className="card-index">0{index+1}</div><span>{guide.tag}</span><h3>{guide.title}</h3><p>{guide.text}</p><b>READ GUIDE →</b></Link>)}</div>
+
+    <section className="start-bar"><b>NEW PLAYER?</b><span>Follow the fastest route from first join to your first fight.</span><Link href="/controls">1. Controls</Link><Link href="/fighting-styles">2. Pick a style</Link><Link href="/character">3. Character</Link></section>
+
+    <section className="game-section">
+      <div className="game-section-head"><div><span>EXPLORE THE WIKI</span><h2>What do you need help with?</h2></div><Link href="/guides">VIEW ALL GUIDES →</Link></div>
+      <div className="game-guide-grid">{guides.map(g=><Link href={g.href} className="game-guide-card" key={g.href}><div className="game-icon">{g.icon}</div><span>{g.tag}</span><h3>{g.title}</h3><p>{g.text}</p><b>OPEN GUIDE <i>→</i></b></Link>)}</div>
     </section>
-    <section className="notice section-shell"><div><p className="kicker">SOURCE POLICY</p><h2>Facts first. Rumors labeled.</h2></div><p>This is an independent community guide. Game identity and status are checked against Roblox; changing mechanics should be verified in-game. Where public sources conflict, the page says so clearly.</p></section>
-    <footer><span>GAKURAN ARCHIVE</span><p>Unofficial community resource. Not affiliated with Roblox or the game developers.</p></footer>
-  </main>;
+
+    <section className="game-section two-column">
+      <div className="quick-panel"><div className="panel-title"><span>QUICK REFERENCE</span><h2>Essential controls</h2></div><div className="mini-controls"><div><kbd>T</kbd><span>Combat stance</span></div><div><kbd>F</kbd><span>Block</span></div><div><kbd>Q</kbd><span>Dash</span></div><div><kbd>R</kbd><span>Heavy attack</span></div></div><Link href="/controls">SEE EVERY KEYBIND →</Link></div>
+      <div className="safe-panel"><span className="shield">✓</span><div><p>SOURCE-AWARE WIKI</p><h2>No fake codes.<br/>No invented stats.</h2><span>Changing mechanics are labeled for verification, and conflicting community claims are never presented as official facts.</span></div></div>
+    </section>
+
+    <section className="roblox-cta"><div><span>READY TO ENTER THE SCHOOL?</span><h2>Open the official Gakuran experience.</h2></div><a href="https://www.roblox.com/games/128736949265057/Gakuran" target="_blank" rel="noreferrer">PLAY ON ROBLOX ↗</a></section>
+  </main><Footer/></div>;
 }
