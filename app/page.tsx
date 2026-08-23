@@ -5,6 +5,7 @@ import { Footer, Header } from "./components";
 export const metadata: Metadata = {
   title: "Gakuran Roblox Wiki, Controls & Fighting Styles",
   description: "A practical Gakuran Roblox wiki with beginner routes, controls, fighting styles, character guides and carefully checked community resources.",
+  alternates: { canonical: "/" },
 };
 
 const guides = [
