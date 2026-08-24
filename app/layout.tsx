@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   description: "Independent, source-aware guides for the Roblox experience Gakuran.",
   keywords: ["gakuran wiki", "gakuran guide", "gakuran fighting styles", "gakuran controls"],
   robots: { index: true, follow: true },
+  verification: {
+    google: "8_R4OQHGjI0sijDB_3ipQ87z3cBqgvp7GhaPxQew7Uw",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
